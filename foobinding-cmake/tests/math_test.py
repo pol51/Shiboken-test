@@ -1,18 +1,27 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
- 
-'''Test cases for foo bindings module.'''
- 
-import unittest
+
 import foo
+
+from sys import argv
+from PySide import QtGui
+from PySide.QtCore import SIGNAL, SLOT
  
-class MathTest(unittest.TestCase):
+class Test(QtGui.QWidget):
  
-    def testMath(self):
+    def onClick(self):
+      self.mainW.addLine('Test 0')
+ 
+    def test(self):
         '''Test case for Math class from foo module.'''
-        val = 5
-        math = foo.Math()
-        self.assertEqual(math.squared(5), 5 * 5)
+        
+        self.mainW = foo.MainW()
+        self.mainW.show()
+        self.b = QtGui.QPushButton('Test')
+        self.b.connect(self.b, SIGNAL('clicked()'), self, SLOT('onClick()'))
+        self.b.show()
  
 if __name__ == '__main__':
-    unittest.main()
+    app = QtGui.QApplication(argv)
+    test = Test()
+    test.test()
+    app.exec_()

@@ -1,7 +1,16 @@
 #include "foo.h"
- 
-int Math::squared(int x)
+
+#include <QtGui/QListWidget>
+
+MainW::MainW(QWidget *parent) :
+  QMainWindow(parent)
 {
-  return x * x;
+  _list = new QListWidget(this);
+  _list->setAlternatingRowColors(true);
+  setCentralWidget(_list);
 }
 
+void MainW::addLine(const QString &newLine)
+{
+  _list->addItem(newLine);
+}

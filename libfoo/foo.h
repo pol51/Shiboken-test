@@ -1,17 +1,23 @@
-#ifndef FOO_H
-#define FOO_H
+#ifndef __FOO_H__
+#define __FOO_H__
  
-#include <QtCore/QtCore>
- 
-class Math : public QObject
+#include <QtGui/QMainWindow>
+
+class QListWidget;
+
+class MainW : public QMainWindow
 {
   Q_OBJECT
   
   public:
-    Math() {}
-    virtual ~Math() {}
+    MainW(QWidget *parent = NULL);
+    virtual ~MainW() {}
     
-    int squared(int x);
+  public slots:
+    void addLine(const QString &newLine);
+    
+  protected:
+    QListWidget *_list;
 };
 
 #endif

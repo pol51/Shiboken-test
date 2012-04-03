@@ -1,8 +1,9 @@
 project(foobinding)
  
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8)
 
 SET(PYTHON_BASENAME -python2.7)
+SET(PYTHON_SUFFIX -python2.7)
  
 find_package(PythonLibs REQUIRED)
 find_package(Shiboken REQUIRED)

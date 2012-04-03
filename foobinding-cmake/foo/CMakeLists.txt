@@ -2,7 +2,7 @@ project(foo)
  
 set(foo_SRC
     ${CMAKE_CURRENT_BINARY_DIR}/foo/foo_module_wrapper.cpp
-    ${CMAKE_CURRENT_BINARY_DIR}/foo/math_wrapper.cpp
+    ${CMAKE_CURRENT_BINARY_DIR}/foo/mainw_wrapper.cpp
 )
  
 set(foo_INCLUDE_DIRECTORIES
@@ -10,6 +10,7 @@ set(foo_INCLUDE_DIRECTORIES
     ${PYTHON_INCLUDE_PATH}
     ${PYSIDE_INCLUDE_DIR}
     ${PYSIDE_INCLUDE_DIR}/QtCore
+    ${PYSIDE_INCLUDE_DIR}/QtGui
     ${QT_INCLUDE_DIR}
     ${QT_QTCORE_INCLUDE_DIR}
     ${LIBFOO_DIR}
