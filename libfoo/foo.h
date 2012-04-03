@@ -1,23 +1,17 @@
 #ifndef __FOO_H__
 #define __FOO_H__
  
-#include <QtGui/QMainWindow>
+#include <QtGui/QListWidget>
 
-class QListWidget;
-
-class MainW : public QMainWindow
+class MainW : public QListWidget
 {
   Q_OBJECT
   
   public:
     MainW(QWidget *parent = NULL);
-    virtual ~MainW() {}
     
   public slots:
     void addLine(const QString &newLine);
-    
-  protected:
-    QListWidget *_list;
 };
 
 #endif

@@ -1,16 +1,13 @@
 #include "foo.h"
 
-#include <QtGui/QListWidget>
-
 MainW::MainW(QWidget *parent) :
-  QMainWindow(parent)
+  QListWidget(parent)
 {
-  _list = new QListWidget(this);
-  _list->setAlternatingRowColors(true);
-  setCentralWidget(_list);
+  setAlternatingRowColors(true);
 }
 
 void MainW::addLine(const QString &newLine)
 {
-  _list->addItem(newLine);
+  addItem(newLine);
 }
+
