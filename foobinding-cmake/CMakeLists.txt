@@ -1,8 +1,10 @@
 project(foobinding)
  
 cmake_minimum_required(VERSION 2.6)
+
+SET(PYTHON_BASENAME -python2.7)
  
-find_package(PythonLibs 2.7 REQUIRED)
+find_package(PythonLibs REQUIRED)
 find_package(Shiboken REQUIRED)
 find_package(PySide REQUIRED)
 find_package(Qt4 4.6.2 REQUIRED)
@@ -13,7 +15,7 @@ find_program(GENERATOR generatorrunner REQUIRED)
 if (NOT GENERATOR)
     message(FATAL_ERROR "You need to specify GENERATOR variable (-DGENERATOR=value)")
 endif()
- 
+
 if(CMAKE_HOST_UNIX)
     option(ENABLE_GCC_OPTIMIZATION "Enable specific GCC flags to optimization library size and performance. Only available on Release Mode" 0)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fvisibility=hidden -Wno-strict-aliasing")
@@ -39,4 +41,3 @@ enable_testing()
  
 add_subdirectory(foo)
 add_subdirectory(tests)
-

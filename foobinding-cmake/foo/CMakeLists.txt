@@ -30,7 +30,7 @@ target_link_libraries(foo ${foo_LINK_LIBRARIES})
  
 add_custom_command(OUTPUT ${foo_SRC}
                    COMMAND ${GENERATOR}
-                   --generator-set=shiboken --enable-parent-ctor-heuristic --enable-pyside-extensions --enable-return-value-heuristic --use-isnull-as-nb_nonzero
+                   --generatorSet=shiboken --enable-parent-ctor-heuristic --enable-pyside-extensions --enable-return-value-heuristic
                    ${CMAKE_SOURCE_DIR}/foo/global.h
                    --include-paths=${QT_INCLUDE_DIR}:${LIBFOO_DIR}
                    --typesystem-paths=${typesystem_path}:${PYSIDE_TYPESYSTEMS}
@@ -39,4 +39,3 @@ add_custom_command(OUTPUT ${foo_SRC}
                    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                    COMMENT "Running generator for libfoo..."
                   )
-
